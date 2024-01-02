@@ -28,6 +28,9 @@ public class RatingController {
     @GetMapping("/events-all")
     public List<Event> getAllEvents() { return eventService.getAllEvents(); }
 
+    @GetMapping("/ratings-all")
+    public List<Rating> getAllRatings() { return ratingService.getAllRatings(); }
+
     @PostMapping("/rate/{eventId}")
     public ResponseEntity<String> rateEvent(@PathVariable Long eventId,
                                             HttpServletRequest request,

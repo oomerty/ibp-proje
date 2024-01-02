@@ -32,13 +32,13 @@ function displayEvents(events) {
     eventsList.innerHTML = "";
 
     events.forEach(function (event) {
-        /*let listItem = document.createElement("li");
+        let listItem = document.createElement("li");
         listItem.textContent = event.name;
         listItem.addEventListener("click", function () {
             showRatingSection(event.id);
         });
-        eventsList.appendChild(listItem);*/
-        const eventStrtDate = new Date(event.startDate);
+        eventsList.appendChild(listItem);
+        /*const eventStrtDate = new Date(event.startDate);
         const eventStrtHr = eventStrtDate.getHours();
         const eventStrtMn = eventStrtDate.getMinutes();
 
@@ -56,7 +56,7 @@ function displayEvents(events) {
 
         document.querySelector('.btn--event').addEventListener('click', function () {
             showRatingSection(event.id);
-        });
+        });*/
     });
 
     //eventsContainer.style.display = "block";
@@ -80,7 +80,10 @@ function showRatingSection(eventId) {
 function unshowRatingSection() {
     document.querySelector('#upcoming-events').style.display = "flex";
     document.querySelector('#rating-container').style.display = "none";
-    document.querySelector('.response-text').textContent = "";
+
+    let responseText = document.querySelector('.response-text');
+    responseText.style.display = "none";
+    responseText.textContent = "";
 }
 
 function rateEvent(eventId) {
