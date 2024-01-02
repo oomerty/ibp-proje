@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RatingappApplication<ratingapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.ratingapp.ratingapp.RatingappApplication",
+            "projectName": "ratingapp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
