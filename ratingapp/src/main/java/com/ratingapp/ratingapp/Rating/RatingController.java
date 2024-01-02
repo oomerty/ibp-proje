@@ -35,7 +35,6 @@ public class RatingController {
         String ipAddress = getClientIp(request);
         String deviceIdentity = request.getHeader("User-Agent");
 
-        // Check if the user has already rated this event
         if (ratingService.hasUserRatedEvent(ipAddress, eventId)) {
             return new ResponseEntity<>("Bu etkinliği zaten değerlendirdiniz.", HttpStatus.BAD_REQUEST);
         }

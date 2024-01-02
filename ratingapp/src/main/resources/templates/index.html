@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Etkinlik Değerlendirme Sistemi</title>
+    <meta name="description" content="Rating Application for event organizors to let attendees leave feedback to events.">
+    <meta name="keywords" content="rating, event">
 
     <link rel="stylesheet" href="https://use.typekit.net/abn3nqu.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
 </head>
 <body>
     <h1 class="app-title">Etkinlik Değerlendirme</h1>
 
     <div id="upcoming-events" class="standart-text">
-        <h2 class="upcoming-title">Yaklaşan Etkinlikler</h2>
+        <h2 class="subtitle">Değerlendirilebilecek Etkinlikler</h2>
         <ul id="events-list"></ul>
     </div>
 
@@ -26,13 +30,11 @@
             <option value="mid">Ortalama</option>
             <option value="bad">Kötü</option>
         </select>
-        <button class="btn--rate btn btn-primary" onclick="rateEvent()">Oyu Gönder</button>
-        <button class="btn--back btn btn-secondary" onclick="rateEvent()">
+        <button class="btn--rate btn btn-primary">Oyu Gönder</button>
+        <button class="btn--back btn btn-secondary">
             <span class="material-symbols-rounded btn-icon">arrow_back</span>
             Etkinlik Seçimine Dön</button>
         <p class="response-text standart-text" style="display: none;"></p>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
