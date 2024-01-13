@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="https://use.typekit.net/abn3nqu.css">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/queries.css}">
+    <link rel="stylesheet" th:href="@{/css/themes.css}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
     <script src="https://kit.fontawesome.com/fbcbc2a8b9.js" crossorigin="anonymous"></script>
     <script type="text/javascript" th:src="@{/js/single-event.js}"></script>
 </head>
 <body>
-
     <h1 class="app-title">Etkinlik Değerlendirme</h1>
 
     <div id="alert-container" class="standart-text">
@@ -37,7 +37,7 @@
 
     <div id="event-detail-card" class="container" style="display: none;">
         <h3 class="subtitle">Değerlendirilen Etkinlik</h3>
-        <p class="standart-text card-desc">Değelendirmek üzere olduğunuz etkinliğe ait detaylar:</p>
+        <p class="standart-text card-desc">Değerlendirmek üzere olduğunuz etkinliğe ait detaylar:</p>
         <p class="event-title"></p>
         <p class="standart-text event-date" style="color: var(--text-secondary);"></p>
     </div>
@@ -46,9 +46,15 @@
         <p class="standart-text" style="color: var(--text-secondary);">Bu proje <i class="fa-brands fa-square-github"></i> <a href="https://github.com/oomerty">Ömer Mert ERYİĞİT</a> tarafından Akdeniz Üniversitesi Elektrik Elektronik Mühendisliği bölümü İleri Bilgisayar Programlama dersi final projesi olarak geliştirilmiştir.</p>
     </div>
 
+    <div id="themes">
+        <button class="btn-light"><span class="material-symbols-rounded">light_mode</span></button>
+        <button class="btn-dark"><span class="material-symbols-rounded">dark_mode</span></button>
+        <button class="btn-ac"><img class="theme-icon" th:src="@{/images/Animal_Crossing_Leaf.png}" alt="Animal Crossing Theme Icon"/></button>
+    </div>
+
     <script type="text/javascript" th:inline="javascript">
         const pageNum = [[${eventIDS}]];
-        console.log(pageNum);
     </script>
+    <script type="text/javascript" th:src="@{/js/themes.js}"></script>
 
 </body>

@@ -1,0 +1,38 @@
+@font-face {
+  font-family: Kaleko;
+  src: url("../fonts/Kaleko\ 105\ Round\ W01\ Bold.ttf");
+  font-weight: bold;
+}
+
+:root {
+  --white-light: #FBFBFC;
+  --white-base: #F1F3F5;
+  --white-dark: #E9ECEF;
+
+  --gray-darker: #212529
+
+  --text-secondary: #868E96;
+  --text-primary: #495057;
+  --text-subtitle: #343A40;
+  --text-title: #212529;
+
+  --background: #F1F3F5;
+  --container-background: #FBFBFC;
+
+  --witdh: 32%;
+}
+
+[data-theme="dark"] {
+  --background: #212529;
+  --container-background: #343A40;
+}
+
+[data-theme="ac"] {
+  --background: #e4ddc1;
+
+  --text-title: #855e27;
+}
+
+[data-theme="ac"] body {
+  font-family: "Kaleko";
+}
