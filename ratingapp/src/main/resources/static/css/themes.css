@@ -11,13 +11,22 @@
 
   --gray-darker: #212529
 
+  --background: #F1F3F5;
+  --container-background: #FBFBFC;
+  --container-border: #DEE2E6;
+
   --text-secondary: #868E96;
   --text-primary: #495057;
   --text-subtitle: #343A40;
   --text-title: #212529;
+  
+  --btn-primary-background: #444BDA;
+  --btn-primary-border: #444BDA;
+  --btn-primary-content: #FBFBFC;
 
-  --background: #F1F3F5;
-  --container-background: #FBFBFC;
+  --btn-secondary-background: #DBDDFC;
+  --btn-secondary-border: #C9CBFB;
+  --btn-secondary-content: #4B53F2;
 
   --witdh: 32%;
 }
@@ -25,14 +34,43 @@
 [data-theme="dark"] {
   --background: #212529;
   --container-background: #343A40;
+  --container-border: #495057;
+
+  --text-secondary: #ADB5BD;
+  --text-primary: #E9ECEF;
+  --text-subtitle: #F1F3F5;
+  --text-title: #FBFBFC;
+
+  --btn-primary-background: #444BDA;
+  --btn-primary-border: #444BDA;
+  --btn-primary-content: #FBFBFC;
+
+  --btn-secondary-background: #DBDDFC;
+  --btn-secondary-border: #C9CBFB;
+  --btn-secondary-content: #4B53F2;
 }
 
 [data-theme="ac"] {
   --background: #e4ddc1;
+  --container-background: #e2d7b1;
+  --container-border: #e2d7b1;
 
+  --text-secondary: #727362;
+  --text-primary: #777263;
+  --text-subtitle: #504f52;
   --text-title: #855e27;
+
+  --btn-primary-background: #04afa5;
+  --btn-primary-border: #04afa5;
+  --btn-primary-content: #fffff8;
+
+  --btn-secondary-background: #f7f6e2;
+  --btn-secondary-border: #f7f6e2;
+  --btn-secondary-content: #8a7b66;
 }
 
 [data-theme="ac"] body {
   font-family: "Kaleko";
+
+  background-image: url("../images/acbg.svg");
 }
