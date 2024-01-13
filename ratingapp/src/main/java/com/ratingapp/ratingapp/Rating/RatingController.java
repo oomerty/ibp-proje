@@ -20,13 +20,19 @@ public class RatingController {
     @Autowired
     private EventService eventService;
 
-    @GetMapping("/upcoming-events")
-    public List<Event> getUpcomingEvents() {
-        return eventService.getUpcomingEvents();
-    }
-
-    @GetMapping("/events-all")
+    @GetMapping("/events/all")
     public List<Event> getAllEvents() { return eventService.getAllEvents(); }
+
+    @GetMapping("/events/{eventId}")
+    public ResponseEntity<Event> getEvent(@PathVariable Long eventId) { 
+        Event event = eventService.getEventById(eventId);
+
+        if (event != null) {
+            return ResponseEntity.ok(event);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @GetMapping("/ratings-all")
     public List<Rating> getAllRatings() { return ratingService.getAllRatings(); }

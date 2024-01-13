@@ -16,12 +16,6 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
-    @GetMapping("/upcoming")
-    public ResponseEntity<List<Event>> getUpcomingEvents() {
-        List<Event> upcomingEvents = eventService.getUpcomingEvents();
-        return ResponseEntity.ok(upcomingEvents);
-    }
-
     @GetMapping("/all")
     public ResponseEntity<List<Event>> getAllEvents() {
         List<Event> allEvents = eventService.getAllEvents();

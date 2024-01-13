@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function loadUpcomingEvents() {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "/api/ratings/events-all", true);
+    xhr.open("GET", "/api/ratings/events/all", true);
 
     xhr.onload = function () {
         if (xhr.status == 200) {
@@ -31,55 +31,68 @@ function displayEvents(events) {
     let eventsList = document.getElementById("events-list");
     eventsList.innerHTML = "";
 
+    const eventStrtDate = new Date(events.startDate);
+  
+    const eventStrtHr = eventStrtDate.getHours();
+    const eventStrtMn = eventStrtDate.getMinutes();
+
+    const eventEndDate = new Date(events.endDate);
+    const eventEndHr = eventEndDate.getHours();
+    const eventEndMn = eventEndDate.getMinutes();
+
+    const eventStrtDay = eventStrtDate.getDate();
+    const eventStrtMnth = eventStrtDate.getMonth();
+    const eventStrtYear = eventStrtDate.getFullYear();
+
     events.forEach(function (event) {
         let listItem = document.createElement("li");
+        listItem.classList.add("container");
+        listItem.classList.add("event-item");
+        listItem.classList.add("event-item");
         listItem.textContent = event.name;
+
         listItem.addEventListener("click", function () {
-            showRatingSection(event.id);
+            showRatingSection(event);
         });
         eventsList.appendChild(listItem);
-        /*const eventStrtDate = new Date(event.startDate);
-        const eventStrtHr = eventStrtDate.getHours();
-        const eventStrtMn = eventStrtDate.getMinutes();
-
-        const eventEndDate = new Date(event.endDate);
-        const eventEndHr = eventEndDate.getHours();
-        const eventEndMn = eventEndDate.getMinutes();
-
-        const eventItem = `<li class="container event-item">
-            <p class="event-title">${event.name}</p>
-            <p class="standart-text" style="color: var(--text-secondary);">${eventStrtHr}:${eventStrtMn.toString().padEnd(2, "0")} - ${eventEndHr}:${eventEndMn.toString().padEnd(2, "0")}</p>
-            <button class="btn--event btn btn-primary">Etkinliği Seç</button>
-        </li>`;
-
-        eventsList.insertAdjacentHTML("beforeend", eventItem);
-
-        document.querySelector('.btn--event').addEventListener('click', function () {
-            showRatingSection(event.id);
-        });*/
     });
 
-    //eventsContainer.style.display = "block";
 }
 
-function showRatingSection(eventId) {
-    //eventsContainer.style.display = "none";
+function showRatingSection(event) {
     document.querySelector('#upcoming-events').style.display = "none";
-    //ratingContainer.style.display = "flex";
     document.querySelector('#rating-container').style.display = "flex";
+    document.querySelector('#event-detail-card').style.display = "flex";
 
     document.querySelector(".btn--rate").addEventListener("click", function () {
-        rateEvent(eventId);
+        rateEvent(event.id);
     });
 
     document.querySelector('.btn--back').addEventListener('click', function () {
         unshowRatingSection();
     });
+
+    const eventStrtDate = new Date(event.startDate);
+  
+    const eventStrtHr = eventStrtDate.getHours();
+    const eventStrtMn = eventStrtDate.getMinutes();
+
+    const eventEndDate = new Date(event.endDate);
+    const eventEndHr = eventEndDate.getHours();
+    const eventEndMn = eventEndDate.getMinutes();
+
+    const eventStrtDay = eventStrtDate.getDate();
+    const eventStrtMnth = eventStrtDate.getMonth();
+    const eventStrtYear = eventStrtDate.getFullYear();
+
+    document.querySelector('.event-title').textContent = `${event.name}`;
+    document.querySelector('.event-date').textContent = `${eventStrtHr}:${eventStrtMn.toString().padEnd(2, "0")} - ${eventEndHr}:${eventEndMn.toString().padEnd(2, "0")} • ${eventStrtDay}/${eventStrtMnth + 1}/${eventStrtYear.toString().slice(2)}`;
 }
 
 function unshowRatingSection() {
     document.querySelector('#upcoming-events').style.display = "flex";
     document.querySelector('#rating-container').style.display = "none";
+    document.querySelector('#event-detail-card').style.display = "none";
 
     let responseText = document.querySelector('.response-text');
     responseText.style.display = "none";
@@ -88,7 +101,6 @@ function unshowRatingSection() {
 
 function rateEvent(eventId) {
     let rating = document.getElementById("rating").value;
-    console.log(rating);
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", `/api/ratings/rate/${eventId}`, true);

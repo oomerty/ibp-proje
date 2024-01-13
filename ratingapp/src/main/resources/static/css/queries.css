@@ -1,0 +1,65 @@
+/*
+  Bu dosya HTML sayfalarının responsive olması için gereken CSS kodlarını içerir.
+  Değişimin olacağı ekran boyutları açıklama satırlarında verilmiştir.
+*/
+
+  /***********************************/
+ /* 1344px ALTI (KÜÇÜK MASAÜSTÜLER) */
+/***********************************/
+@media(max-width: 84em) {
+  :root {
+    --witdh: 40%;
+  }
+}
+
+  /*************************************/
+ /* 1200px ALTI (YATAY MOD TABLETLER) */
+/*************************************/
+@media(max-width: 75em) {
+  :root {
+    --witdh: 80%;
+  }
+
+  #credits {
+    --witdh: 56%;
+  }
+}
+
+  /**************************/
+ /* 944px ALTI (TABLETLER) */
+/**************************/
+@media(max-width: 59em) {
+  :root {
+    --witdh: 88%;
+  }
+
+  #credits {
+    --witdh: 56%;
+  }
+}
+
+  /********************************/
+ /* 704px ALTI (KÜÇÜK TABLETLER) */
+/********************************/
+@media(max-width: 44em) {
+  :root {
+    --witdh: 88%;
+  }
+
+  #credits {
+    --witdh: 64%;
+  }
+}
+
+  /***************************/
+ /* 544px Altı (TELEFONLAR) */
+/***************************/
+@media(max-width: 34em) {
+  :root {
+    --witdh: 96%;
+  }
+
+  #credits {
+    --witdh: 72%;
+  }
+}
