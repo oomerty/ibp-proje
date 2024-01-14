@@ -1,0 +1,272 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.input-field {
+  display: inline-flex;
+  padding: 1.25rem 1.4rem;
+  align-items: center;
+  gap: var(--Spacing-1, 0.8rem);
+  width: 100%;
+
+  color: var(--text-primary);
+
+  border-radius: 0.7rem;
+  border: 1px solid var(--container-border);
+  background: #FBFBFC;
+}
+
+  /**********/
+ /* LOG-IN */
+/**********/
+
+#login-container {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content;
+}
+
+/* TITLE SECTION */
+
+.title-section {
+  height: max-content;
+
+  grid-column: span 2;
+
+  border-bottom: 1px solid var(--container-border);
+  background: var(--container-background);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 1.6rem 12.8rem;
+}
+
+.admin-page-title {
+  color: var(--text-title);
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+/* LOGIN SECTION */
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 0.4rem;
+
+  height: 100%;
+
+  padding: 6.4rem 12.8rem;
+}
+
+.login-section .input-field {
+  margin-bottom: 0.8rem;
+}
+
+.login-section .btn {
+  margin-bottom: 1.2rem;
+}
+
+.login-title {
+  color: #4B53F2;
+  text-align: left;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.6rem; /* 112.5% */
+  letter-spacing: 0.05rem;
+
+  margin-bottom: 0.8rem;
+}
+
+.login-text {
+  color: var(--text-primary);
+  text-align: left;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.8rem; /* 112.5% */
+  letter-spacing: -0.025rem;
+
+  margin-bottom: 3.2rem;
+}
+
+/* INFO SECTION */
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+
+  height: 100%;
+
+  padding: 6.4rem 12.8rem;
+}
+
+.info-icon-outer .material-symbols-rounded {
+  color: #4B53F2;
+  font-size: 4.8rem;
+}
+
+.info-icon-inner {
+  padding: 1.6rem;
+  border-radius: 100rem;
+  background: #DBDDFC;
+}
+
+.info-icon-outer {
+  padding: 1.6rem;
+  border-radius: 100rem;
+  background: #EDEEFE;
+}
+
+.info {
+  height: 100%;
+}
+
+.info h3 {
+  color: #4B53F2;
+  text-align: center;
+  font-family: Indivisible;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4.8rem; /* 100% */
+  letter-spacing: 0.02rem;
+
+  margin-bottom: 1.6rem;
+}
+
+.info p {
+  text-align: center;
+}
+
+.credit .credit-text {
+  text-align: center;
+}
+
+  /*************/
+ /* DASHBOARD */
+/*************/
+
+#dashboard {
+  width: 100vw;
+  height: 100vh;
+
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: max-content;
+}
+
+/* SIDE BAR */
+
+#side-bar {
+  border-right: 1px solid var(--container-border);
+  background: var(--container-background);
+
+  grid-row: span 2;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.6rem 1.8rem;
+}
+
+#side-bar h3 {
+  margin-bottom: 1.6rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  height: 100%;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.4rem;
+
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.6rem;
+
+  color: var(--text-primary);
+}
+
+.nav-btn .material-symbols-rounded {
+  font-size: 1.6rem;
+}
+
+#dashboard .credit-text {
+  text-align: left;
+}
+
+/* TITLE BAR */
+#title-bar {
+  height: max-content;
+  border-bottom: 1px solid var(--container-border);
+  background: var(--container-background);
+
+  display: flex;
+  flex-direction: row;
+
+  padding: 1.6rem 3.2rem;
+}
+
+/* CONTENT */
+#content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 3.2rem 6.4rem;
+}
+
+.table {
+  border-collapse: collapse;
+  border-radius: .7rem;
+}
+
+.table thead {
+  background: var(--text-primary);
+  color: var(--container-background);
+
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem; /* 112.5% */
+  letter-spacing: -0.01rem;
+}
+
+th, td {
+  padding: 1.6rem;
+  border: 1px solid var(--background);
+}
+
+tr {
+  font-size: 1.4rem;
+}
+
+.odd-row {
+  background-color: var(--container-background);
+}
+
+.even-row {
+  background-color: var(--container-border);
+}

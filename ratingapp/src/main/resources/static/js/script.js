@@ -3,10 +3,10 @@ let ratingContainer = document.getElementById("rating-container");
 let responseText = document.querySelector('.response-text');
 
 document.addEventListener("DOMContentLoaded", function () {
-    loadUpcomingEvents();
+    loadEvents();
 });
 
-function loadUpcomingEvents() {
+function loadEvents() {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "/api/ratings/events/all", true);
 
@@ -111,7 +111,7 @@ function rateEvent(eventId) {
         if (xhr.status == 200) {
             document.querySelector('.response-text').textContent = xhr.responseText;
             ratingContainer.style.display = "none";
-            loadUpcomingEvents();
+            loadEvents();
         } else {
             if (xhr.responseText != "") {
                 document.querySelector('.response-text').textContent = xhr.responseText;

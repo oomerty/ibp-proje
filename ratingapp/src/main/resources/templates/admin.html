@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Etkinlik Değerlendirme Sistemi Admin Paneli</title>
+    <meta name="description" content="Rating Application for event organizors to let attendees leave feedback to events.">
+    <meta name="keywords" content="rating, event">
+
+    <link rel="stylesheet" href="https://use.typekit.net/abn3nqu.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/queries.css}">
+    <link rel="stylesheet" th:href="@{/css/themes.css}">
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <script src="https://kit.fontawesome.com/fbcbc2a8b9.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/admin.js}"></script>
+</head>
+<body>
+  
+  <div id="login-container">
+    <div class="title-section">
+      <h1 class="admin-page-title">Admin Paneli</h1>
+    </div>
+
+    <div class="login-section">
+      <h2 class="login-title">Giriş</h2>
+      <p class="login-text">Bilgilerinizi girerek admin yönetim paneline giriş yapabilirsiniz.</p>
+
+      <label for="username" class="standart-text">Kullanıcı Adı</label>
+      <input type="text" name="username" id="username" class="standart-text input-field" placeholder="İsminizi Giriniz" required>
+  
+      <label for="password" class="standart-text">Şifre</label>
+      <input type="password" name="password" id="password" class="standart-text input-field" placeholder="Şifrenizi Giriniz" required>
+  
+      <button onclick="login()" class="btn btn-primary">Giriş Yap <span class="material-symbols-rounded btn-icon">arrow_forward</span></button>
+      <p class="login-warning standart-text"></p>
+    </div>
+
+    <div class="info-section">
+      <span class="info-icon-outer">
+        <span class="material-symbols-rounded info-icon-inner">
+        shield_person
+        </span>
+      </span>
+
+      <div class="info">
+        <h3>Admin Paneline Hoşgeldiniz</h3>
+        <p class="standart-text">Panelinizden etkinlikleriniz görüntüleyebilir, etkinliklerinize gelen değerlendirmleier gözlemleyebilirsiniz.</p>
+      </div>
+
+      <div class="credit">
+        <p class="standart-text credit-text" style="color: var(--text-secondary);">Bu proje <i class="fa-brands fa-square-github"></i> <a href="https://github.com/oomerty">Ömer Mert ERYİĞİT</a> tarafından Akdeniz Üniversitesi Elektrik Elektronik Mühendisliği bölümü İleri Bilgisayar Programlama dersi final projesi olarak geliştirilmiştir.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="dashboard" style="display: none;">
+    <div id="side-bar">
+      <h3 class="admin-page-title">Admin Paneli</h3>
+      
+      <div class="nav">
+        <span class="nav-btn" id="nav-events"><span class="material-symbols-rounded">event</span>Etkinlikler</span>
+        <span class="nav-btn" id="nav-ratings"><span class="material-symbols-rounded">reviews</span>Değerlendirmeler</span>
+      </div>
+
+      <div class="credit">
+        <p class="standart-text credit-text" style="color: var(--text-secondary);">Bu proje <i class="fa-brands fa-square-github"></i> <a href="https://github.com/oomerty">Ömer Mert ERYİĞİT</a> tarafından Akdeniz Üniversitesi Elektrik Elektronik Mühendisliği bölümü İleri Bilgisayar Programlama dersi final projesi olarak geliştirilmiştir.</p>
+      </div>
+    </div>
+
+    <div id="title-bar">
+      <h3 class="admin-page-title">Etkinlikler</h3>
+    </div>
+
+    <div id="content">
+
+      <div class="events-table" style="display: inline-block;">
+        <table class="event-table table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Etkinlik Adı</th>
+              <th>Başlangıç Tarihi</th>
+              <th>Bitiş Tarihi</th>
+              <th>Değerlendirme Bağlantısı</th>
+            </tr>
+          </thead>
+          <tbody class="event-table-body">
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ratings-table" style="display: none;">
+        <table class="rating-table table">
+          <thead>
+            <tr>
+              <th>Değerlendirme</th>
+              <th>Etkinlik Adı</th>
+              <th>Değerlendirme Tarihi</th>
+              <th>IP Adresi</th>
+              <th>Cihaz Bilgisi</th>
+            </tr>
+          </thead>
+          <tbody class="rating-table-body">
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="themes">
+    <button class="btn-light"><span class="material-symbols-rounded">light_mode</span></button>
+    <button class="btn-dark"><span class="material-symbols-rounded">dark_mode</span></button>
+    <button class="btn-ac"><img class="theme-icon" th:src="@{/images/Animal_Crossing_Leaf.png}" alt="Animal Crossing Theme Icon"/></button>
+  </div>
+
+  <script type="text/javascript" th:inline="javascript">
+    const pageNum = [[${eventIDS}]];
+  </script>
+  <script type="text/javascript" th:src="@{/js/themes.js}"></script>
+
+</body>

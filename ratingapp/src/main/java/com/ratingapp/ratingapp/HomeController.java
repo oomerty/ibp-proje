@@ -11,23 +11,20 @@ public class HomeController {
 
     @GetMapping("/")
     public String index() {
-        return  "index";
+        return "index";
     }
-
-    // @GetMapping("/event")
-    // public String singleEvent() {
-    //     return  "single-event";
-    // }
 
     @GetMapping("/event")
     public String generatePage(Model model, @RequestParam(name = "eventID", defaultValue = "1") int eventID) {
-        // Sayfa numarasını Thymeleaf template'e geçir
         model.addAttribute("eventIDS", eventID);
-
-        // Diğer gerekli verileri modele ekleyebilirsiniz
         model.addAttribute("pageTitle", "Generated Page");
 
         return "single-event";
+    }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin";
     }
 
 }

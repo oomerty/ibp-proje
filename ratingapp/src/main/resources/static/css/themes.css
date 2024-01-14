@@ -31,6 +31,10 @@
   --witdh: 32%;
 }
 
+[data-theme="light"] {
+  --background: #F1F3F5;
+}
+
 [data-theme="dark"] {
   --background: #212529;
   --container-background: #343A40;
