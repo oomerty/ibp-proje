@@ -193,6 +193,16 @@ body {
   height: 100%;
 }
 
+.selected {
+  border-radius: 0.7rem;
+  background: #EDEEFE;
+  color: var(--btn-secondary-content);
+}
+
+.selected span, .selected p {
+  color: var(--btn-secondary-content) !important;
+}
+
 .nav-btn {
   display: flex;
   flex-direction: row;
