@@ -151,7 +151,8 @@ function displayRatings(ratings) {
     tableBody.appendChild(tableRow);
 
     let tableRating = document.createElement("td");
-    tableRating.textContent = `${rating.rating.split(":").at(1).replace("\"", "").replace("\"", "").replace("}", "")}`;
+    //tableRating.textContent = `${rating.rating.split(":").at(1).replace("\"", "").replace("\"", "").replace("}", "")}`;
+    tableRating.textContent = `${rating.rating}`;
     tableRow.appendChild(tableRating);
 
     let tableEvent = document.createElement("td");

@@ -180,6 +180,8 @@ body {
   flex-direction: column;
 
   padding: 1.6rem 1.8rem;
+
+  height: 100vh;
 }
 
 #side-bar h3 {
